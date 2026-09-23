@@ -66,6 +66,7 @@ std::vector<fs::directory_entry> matchDirectories(std::vector<fs::directory_entr
 fs::directory_entry menu(std::vector<fs::directory_entry> options) {
 	int choice;
 
+	// Output to std::cerr so std::cout can be used for switching directories without flushing the buffer.
 	std::cerr << "Select which directory to switch to:\n";
 	for (std::size_t i = 0; i < options.size(); i += 1) {
 		std::cerr << "	" << (i + 1) << ". " << options[i].path() << '\n';
